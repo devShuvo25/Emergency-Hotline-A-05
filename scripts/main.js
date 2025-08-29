@@ -76,26 +76,14 @@ const btns = document.getElementsByClassName('btn-common');
 for(let i = 0; i< btns.length; i++){
     btns[i].addEventListener('click', function(){
         navigator.clipboard.writeText(serviceNumber[i]);
-        btns[i].classList.add('bg-gray-300','roboto-font')
         let copyCount = getNumberValue('copy-count');
         copyCount++;
         document.getElementById('copy-count')
         .innerText = copyCount;
+        alert(`The Number has been copied : ${serviceNumber[i]}`)
     })
     
-    btns[i].addEventListener('mousedown', function(){
-            btns[i].classList.add('bg-gray-300','roboto-font')
-            btns[i].innerHTML = `
-            <i class="fa-regular fa-copy" style="color: #5c5c5c;"></i>
-                        Copy`;
-    })
-    btns[i].addEventListener('mouseup', function(){
-            btns[i].classList.remove('bg-gray-300','roboto-font')
-            btns[i].innerHTML = btns[i].innerHTML = `
-            <i class="fa-regular fa-copy" style="color: #5c5c5c;"></i>
-                        Copied`;;
 
-    })
 
 }
  
