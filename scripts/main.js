@@ -8,7 +8,6 @@ let totalHeart = getNumberValue('heart-count');
 for(const heart of hearts){
     heart.style.cursor = 'pointer';
     heart.addEventListener('click', function(){
-        heart.style.color = 'red';
     totalHeart++;
     const getEliment = document.getElementById('heart-count');
     getEliment.innerText = totalHeart;
