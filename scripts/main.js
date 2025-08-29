@@ -16,17 +16,15 @@ for(const heart of hearts){
 }
 // function -2
 let subtitleArr = [];
+let serviceNumber = [];
 const subtitles = document.getElementsByClassName('service-subtitle');
         for(const subtitle of subtitles){
             subtitleArr.push(subtitle.innerText);
         }
-let serviceNumber = [];
 const getNumber = document.getElementsByTagName('span');
 for(const number of getNumber){
     serviceNumber.push(number.innerText);
 }
-const callIcon = document.getElementById('')
-
 //  calling action
 let currentCoins = getNumberValue('coins');
 
@@ -38,19 +36,21 @@ function getCurrentTIme(){
 });
     return time;
 }
-document.getElementById('btn-caller-1')
-.addEventListener('click',function(){
+// calling functions
+const callingBtns = document.getElementsByClassName('btn-for-call');
+for(let i = 0 ; i < callingBtns.length; i++){
+    callingBtns[i].addEventListener('click',function(){
     let time = getCurrentTIme();
     if(currentCoins >= 20){
      currentCoins = currentCoins - 20;
-    alert(`📞Calling ${subtitleArr[0]} ${serviceNumber[0]}...`);
+    alert(`📞Calling ${subtitleArr[i]} ${serviceNumber[i]}...`);
     document.getElementById('coins').innerText = currentCoins;
     const callHistory = document.createElement('div');
 const sectionCallHistory = document.getElementById('update-call-history');
 callHistory.innerHTML = `<div class="h-[80px] bg-gray-100 rounded-2xl flex justify-between items-center p-5 mt-3">
                     <div class="">
-                        <p class="text-xl font-bold">${subtitleArr[0]}</p>
-                        <p class="text-gray-500 font-semibold text-xl">${serviceNumber[0]}</p>
+                        <p class="text-xl font-bold">${subtitleArr[i]}</p>
+                        <p class="text-gray-500 font-semibold text-xl">${serviceNumber[i]}</p>
                     </div>
                     <div><p class="text-gray-500 font-semibold">${time}</p></div>
                 </div>`;
@@ -60,116 +60,7 @@ sectionCallHistory.appendChild(callHistory);
         alert(`❌ Not Sufficient Coins.You need at least 20 coins to make a call`);
     }
 })
-document.getElementById('btn-caller-2')
-.addEventListener('click',function(){
-    let time = getCurrentTIme();    
-    if(currentCoins >= 20){
-     currentCoins = currentCoins - 20;
-    alert(`📞Calling ${subtitleArr[1]} ${serviceNumber[1]}...`);
-    document.getElementById('coins').innerText = currentCoins;
-    const callHistory = document.createElement('div');
-const sectionCallHistory = document.getElementById('update-call-history');
-callHistory.innerHTML = `<div class="h-[80px] bg-gray-100 rounded-2xl flex justify-between items-center p-5 mt-3">
-                    <div class="">
-                        <p class="text-xl font-bold">${subtitleArr[1]}</p>
-                        <p class="text-gray-500 font-semibold text-xl">${serviceNumber[1]}</p>
-                    </div>
-                    <div><p class="text-gray-500 font-semibold">${time}</p></div>
-                </div>`;
-sectionCallHistory.appendChild(callHistory);
-    }
-    else{
-        alert(`❌ Not Sufficient Coins.You need at least 20 coins to make a call`);
-    }
-})
-document.getElementById('btn-caller-3')
-.addEventListener('click',function(){
-    let time = getCurrentTIme();
-    if(currentCoins >= 20){
-     currentCoins = currentCoins - 20;
-    alert(`📞Calling ${subtitleArr[2]} ${serviceNumber[2]}...`);
-    document.getElementById('coins').innerText = currentCoins;
-    const callHistory = document.createElement('div');
-const sectionCallHistory = document.getElementById('update-call-history');
-callHistory.innerHTML = `<div class="h-[80px] bg-gray-100 rounded-2xl flex justify-between items-center p-5 mt-3">
-                    <div class="">
-                        <p class="text-xl font-bold">${subtitleArr[2]}</p>
-                        <p class="text-gray-500 font-semibold text-xl">${serviceNumber[2]}</p>
-                    </div>
-                    <div><p class="text-gray-500 font-semibold">${time}</p></div>
-                </div>`;
-sectionCallHistory.appendChild(callHistory);
-    }
-    else{
-        alert(`❌ Not Sufficient Coins.You need at least 20 coins to make a call`);
-    }
-})
-document.getElementById('btn-caller-4')
-.addEventListener('click',function(){
-    let time = getCurrentTIme();
-    if(currentCoins >= 20){
-     currentCoins = currentCoins - 20;
-    alert(`📞Calling ${subtitleArr[3]} ${serviceNumber[3]}...`);
-    document.getElementById('coins').innerText = currentCoins;
-    const callHistory = document.createElement('div');
-const sectionCallHistory = document.getElementById('update-call-history');
-callHistory.innerHTML = `<div class="h-[80px] bg-gray-100 rounded-2xl flex justify-between items-center p-5 mt-3">
-                    <div class="">
-                        <p class="text-xl font-bold">${subtitleArr[3]}</p>
-                        <p class="text-gray-500 font-semibold text-xl">${serviceNumber[3]}</p>
-                    </div>
-                    <div><p class="text-gray-500 font-semibold">${time}</p></div>
-                </div>`;
-sectionCallHistory.appendChild(callHistory);
-    }
-    else{
-        alert(`❌ Not Sufficient Coins.You need at least 20 coins to make a call`);
-    }
-})
-document.getElementById('btn-caller-5')
-.addEventListener('click',function(){
-    let time = getCurrentTIme();
-    if(currentCoins >= 20){
-     currentCoins = currentCoins - 20;
-    alert(`📞Calling ${subtitleArr[4]} ${serviceNumber[4]}...`);
-    document.getElementById('coins').innerText = currentCoins;
-    const callHistory = document.createElement('div');
-const sectionCallHistory = document.getElementById('update-call-history');
-callHistory.innerHTML = `<div class="h-[80px] bg-gray-100 rounded-2xl flex justify-between items-center p-5 mt-3">
-                    <div class="">
-                        <p class="text-xl font-bold">${subtitleArr[4]}</p>
-                        <p class="text-gray-500 font-semibold text-xl">${serviceNumber[4]}</p>
-                    </div>
-                    <div><p class="text-gray-500 font-semibold">${time}</p></div>
-                </div>`;
-sectionCallHistory.appendChild(callHistory);
-    }
-    else{
-        alert(`❌ Not Sufficient Coins.You need at least 20 coins to make a call`);
-    }
-})
-document.getElementById('btn-caller-6')
-.addEventListener('click',function(){
-    let time = getCurrentTIme();
-    if(currentCoins >= 20){
-     currentCoins = currentCoins - 20;
-    alert(`📞Calling ${subtitleArr[5]} ${serviceNumber[5]}...`);
-    document.getElementById('coins').innerText = currentCoins;
-    const callHistory = document.createElement('div');
-const sectionCallHistory = document.getElementById('update-call-history');
-callHistory.innerHTML = `<div class="h-[80px] bg-gray-100 rounded-2xl flex justify-between items-center p-5 mt-3">
-                    <div class="">
-                        <p class="text-xl font-bold">${subtitleArr[0]}</p>
-                        <p class="text-gray-500 font-semibold text-xl">${serviceNumber[0]}</p>
-                    </div>
-                    <div><p class="text-gray-500 font-semibold">${time}</p></div>
-                </div>`;
-sectionCallHistory.appendChild(callHistory);
-    }
-    else{
-        alert(`❌ Not Sufficient Coins.You need at least 20 coins to make a call`);
-    }
-})
+}
 
 // clear history functions
 document.getElementById('btn-clear-history')
@@ -178,5 +69,33 @@ document.getElementById('btn-clear-history')
     getElement.innerText = '';
 })
 
+// function for copy
 
 
+const btns = document.getElementsByClassName('btn-common');
+for(let i = 0; i< btns.length; i++){
+    btns[i].addEventListener('click', function(){
+        navigator.clipboard.writeText(serviceNumber[i]);
+        btns[i].classList.add('bg-gray-300','roboto-font')
+        let copyCount = getNumberValue('copy-count');
+        copyCount++;
+        document.getElementById('copy-count')
+        .innerText = copyCount;
+    })
+    
+    btns[i].addEventListener('mousedown', function(){
+            btns[i].classList.add('bg-gray-300','roboto-font')
+            btns[i].innerHTML = `
+            <i class="fa-regular fa-copy" style="color: #5c5c5c;"></i>
+                        Copy`;
+    })
+    btns[i].addEventListener('mouseup', function(){
+            btns[i].classList.remove('bg-gray-300','roboto-font')
+            btns[i].innerHTML = btns[i].innerHTML = `
+            <i class="fa-regular fa-copy" style="color: #5c5c5c;"></i>
+                        Copied`;;
+
+    })
+
+}
+ 
